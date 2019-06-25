@@ -2,7 +2,7 @@ const {
   mapFunction, 
   filterFunction, 
   findIndex,
-  reduceFunction
+  reduceFunction,
 } = require('./index');
 
 //mapFunction
@@ -41,7 +41,7 @@ it('iterates through array and invokes the callback', () => {
   const numbers = [1, 2, 3];
   const callback = jest.fn();
 
-  reduceFunction(numbers, callback);
+  reduceFunction(numbers, callback, 0);
 
   expect(callback).toHaveBeenCalledTimes(numbers.length);
 });
@@ -52,5 +52,3 @@ it('iterates through array and sets acc', () => {
 
   expect(sum).toEqual(6);
 });
-
-//
