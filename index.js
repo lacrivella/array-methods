@@ -6,7 +6,27 @@ function mapFunction(arr, callback) {
   return mapped;
 }
 
-module.exports = {
-  mapFunction
-};
+function filterFunction(arr, callback) {
+  const filtered = [];
+  for(let i = 0; i < arr.length; i++) {
+    if(callback(arr[i])) {
+      filtered[filtered.length] = arr[i];
+    }
+  }
+  return filtered;
+}
 
+/*
+function reduceFunction(arr, callback) {
+  const reduced = [];
+  for(let i = 0; i < arr.length; i++) {
+
+  }
+  return reduced;
+}
+
+*/
+module.exports = {
+  mapFunction,
+  filterFunction
+};
