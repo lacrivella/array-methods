@@ -16,6 +16,13 @@ function filterFunction(arr, callback) {
   return filtered;
 }
 
+function findIndex(arr, callback) {
+  for(let i = 0; i < arr.length; i++) {
+    if(callback(arr[i])) return i;
+  }
+  return -1;
+}
+
 /*
 function reduceFunction(arr, callback) {
   const reduced = [];
@@ -28,5 +35,6 @@ function reduceFunction(arr, callback) {
 */
 module.exports = {
   mapFunction,
-  filterFunction
+  filterFunction,
+  findIndex
 };
